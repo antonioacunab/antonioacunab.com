@@ -1,16 +1,14 @@
 ---
 import "../components/GlobalStyles.astro";
 
-import type { ColorsEnum } from "../constants/colors";
-
 import Menu from "../components/Menu.astro"
 
-interface Props {
+interface Props
+{
 	title: string;
-	menuColor: ColorsEnum
 }
 
-const { title, menuColor } = Astro.props;
+const { title } = Astro.props;
 ---
 
 <!doctype html>
@@ -24,7 +22,7 @@ const { title, menuColor } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
-		<Menu color={ menuColor }/>
+		<Menu />
 		<slot />
 	</body>
 </html>
