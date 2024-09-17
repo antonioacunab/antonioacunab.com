@@ -1,0 +1,23 @@
+---
+import { ColorsEnum } from '../constants/colors';
+
+import Envelope from './icons/Envelope.astro';
+
+interface Props
+{
+    text : string;
+    color: ColorsEnum
+}
+
+const { text, color } = Astro.props;
+---
+
+<div class="fixed w-[100%] h-[150px] bottom-0 flex justify-center items-center">
+    <button onclick="window.location.pathname='/contact'"
+        class="bg-primary text-accent rounded-full border-2 border-accent
+        hover:bg-accent hover:text-primary
+        w-[200px] h-[50px]"
+    >
+        Contact me
+    </button>
+</div>

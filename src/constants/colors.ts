@@ -1,6 +1,6 @@
 export enum ColorsEnum
 {
-    PRIMARY   = "#E4FDE0",
-    SECONDARY = "#114B5F",
-    ACCENT    = "#F35B68",
+    PRIMARY   = "#191923",
+    SECONDARY = "#E5D4CE",
+    ACCENT    = "#F39237",
 }

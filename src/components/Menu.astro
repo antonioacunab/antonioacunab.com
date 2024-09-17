@@ -1,0 +1,74 @@
+---
+import { ColorsEnum } from "../constants/colors";
+import { getColorClassName } from "../utils/getColorClassName";
+
+import MenuIcon   from "./icons/Bars-3.astro";
+import CloseIcon  from "./icons/X-Mark.astro";
+import MenuItem   from "./MenuItem.astro";
+import MenuLegend from "./MenuLegend.astro";
+
+interface Props
+{
+    openMenuColor : ColorsEnum;
+    closeMenuColor: ColorsEnum;
+}
+
+const { openMenuColor, closeMenuColor } = Astro.props;
+
+const menuLegendColor: string = getColorClassName(openMenuColor);
+---
+
+<!-- This div manages the separation of the button from the viewport -->
+<div
+    class="fixed top-0 left-0 flex justify-center items-center z-50
+       w-[120px]    h-[120px]
+    md:w-[160px] md:h-[160px]
+    lg:w-[200px] lg:h-[200px]"
+>
+    <!-- This line defines the height and weight of the icon -->
+    <div id="menuButton"
+        class="relative z-30
+           w-[50px]    h-[50px]
+        md:w-[65px] md:h-[65px]
+        lg:w-[80px] lg:h-[80px]"
+    >
+        <MenuIcon  id="menuIcon"  color={openMenuColor}/>
+        <CloseIcon id="closeIcon" color={closeMenuColor}/>
+    </div>
+</div>
+<div
+    class="fixed top-0 right-0 flex justify-center items-center z-30
+       h-[120px]    px-[35px]
+    md:h-[160px] md:px-[50px]
+    lg:h-[200px] lg:px-[60px]"
+>
+    <h1
+        class={`relative ${menuLegendColor} select-none font-light
+           text-[30px]
+        md:text-[35px]
+        lg:text-[40px]`}
+    >
+        ANTONIO ACUÑA
+    </h1>
+</div>
+<menu id="menuList"
+    class="fixed bg-primary flex flex-col justify-center items-center invisible w-[100%] h-[100vh] z-40"
+>
+    <MenuItem href="/"                title="Home"/>
+    <MenuItem href="/about-me"        title="About Me"/>
+    <MenuItem href="/the-day-shift"   title="The Day Shift"/>
+    <MenuItem href="/the-night-shift" title="The Night Shift"/>
+    <MenuItem href="/contact"         title="Contact"/>
+</menu>
+
+<script>
+    import { toggleMenu } from "../utils/toggleMenu";
+
+    const menuButton: HTMLElement | null        = document.getElementById("menuButton");
+    const anchors   : HTMLCollectionOf<Element> = document.getElementsByClassName("menu-anchor");
+
+    menuButton!.addEventListener("click", toggleMenu);
+
+    for (let anchor of anchors)
+        (anchor as HTMLElement).addEventListener("click", toggleMenu)
+</script>

@@ -1,0 +1,20 @@
+---
+
+interface Props
+{
+    href : string;
+    title: string;
+}
+
+const { href, title } = Astro.props;
+
+---
+
+<li
+    class="w-full text-secondary text-center font-semibold hover:text-accent flex items-center justify-center select-none transition-all duration-300
+    h-[120px] text-3xl
+    md:h-[140px] md:text-5xl
+    lg:h-[160px] lg:text-5xl"
+>
+    <a class="menu-anchor" href={href} aria-label={title}>{title}</a>
+</li>

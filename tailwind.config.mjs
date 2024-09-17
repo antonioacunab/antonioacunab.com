@@ -23,6 +23,20 @@ export default {
 				extrabold : 800,
 				black	  : 900,
 			},
+            keyframes: {
+                scale: {
+                    "0%, 100%": { transform: "scale(1.05)" },
+                    "50%"     : { transform: "scale(1)"},
+                },
+                "inverted-scale": {
+                    "0%, 100%": { transform: "scale(1)" },
+                    "50%"     : { transform: "scale(1.05)" },
+                },
+            },
+            animation: {
+                scale: "scale 5s ease-in-out infinite",
+                "inverted-scale": "inverted-scale 5s ease-in-out infinite",
+            },
 		},
 	},
 	plugins: [],

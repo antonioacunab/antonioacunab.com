@@ -1,0 +1,18 @@
+---
+import { ColorsEnum } from "../constants/colors";
+import { getColorClassName } from "../utils/getColorClassName";
+
+interface Props
+{
+    color  : ColorsEnum;
+    legend : string;
+}
+
+const { color, legend } = Astro.props;
+
+let colorClassName: string = getColorClassName(color);
+---
+
+<h1 class={`${colorClassName}`}>
+    {legend}
+</h1>
