@@ -4,8 +4,44 @@ import { ColorsEnum } from "../constants/colors"
 import Layout from "../layouts/Layout.astro"
 ---
 
-<Layout title="About Me" openMenuColor={ColorsEnum.PRIMARY} closeMenuColor={ColorsEnum.ACCENT}>
-    <section class="bg-secondary relative w-[100%] h-[100vh] flex justify-center items-center">
+<Layout title="About Me" openMenuColor={ColorsEnum.ACCENT} closeMenuColor={ColorsEnum.ACCENT}>
+    <section class="bg-secondary relative w-[100%] h-[100vh] flex flex-row items-center justify-center">
+        <div id="about-me-story" class="absolute w-[900px] h-[600px] left-[200px] bg-primary text-4xl text-secondary p-[100px] rounded-3xl shadow-[20px_20px] shadow-accent transition-all">
+            <h2 class="text-accent text-right font-nunito font-black text-5xl">
+                Who am I?
+            </h2>
+            <br>
+            <p class="text-4xl text-secondary">
+                My name is Antonio, a software developer based in Colombia, but it hasn’t always been this way...
+            </p>
+        </div>
+        <!-- <p>
+            My first approach to the working world was a personal venture when I was 13 years old, where I started selling snacks at school. The business was a success, until the school imposed restrictions on sales.
+        </p>
 
+        <p>
+            After that, I tried something different: selling handmade keychains. At the time, social media was just starting to boom, and I remember closing deals via BlackBerry Messenger (the WhatsApp of that era). It was a good business for its time, but not very scalable.
+        </p>
+
+        <p>
+            The next thing I ventured into was a small baking business, which I ran for almost 10 years and helped me pay for university.
+        </p>
+
+        <p>
+            Before finishing my degrees (Mechatronics and Electronics Engineering), I had my first real-world job experience, where I had the opportunity to work as a “Maintenance Intern” and learned a lot about the hospitality industry. However, just a few weeks later, I would face the decision of choosing my university graduation project.
+        </p>
+
+        <p>
+            At that moment, without knowing it would define the course of my career, I had to choose between two options: the first, focused on ships and renewable energy, and the second, focused on web development.
+        </p>
+
+        <p>
+            If you didn’t skip anything, I think you already know which decision I made.
+        </p>
+
+        <p>
+            Today, it’s been more than four years since I chose to pursue a career in software development. I can’t say the other option was bad, but this is something I’m truly passionate about. It allows me to do what I’ve always done: innovate, create, and offer personalized solutions to both businesses and individuals. I live every day with the excitement of seeing a job well done come to life.
+        </p> -->
     </section>
 </Layout>
+
