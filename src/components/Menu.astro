@@ -1,11 +1,10 @@
 ---
-import { ColorsEnum } from "../constants/colors";
-import { getColorClassName } from "../utils/getColorClassName";
+import { ColorsEnum           } from "../constants/colors";
+import { getColorClassNameFor } from "../utils/getColorClassNameFor";
 
 import MenuIcon   from "./icons/Bars-3.astro";
 import CloseIcon  from "./icons/X-Mark.astro";
 import MenuItem   from "./MenuItem.astro";
-import MenuLegend from "./MenuLegend.astro";
 
 interface Props
 {
@@ -15,7 +14,7 @@ interface Props
 
 const { openMenuColor, closeMenuColor } = Astro.props;
 
-const menuLegendColor: string = getColorClassName(openMenuColor);
+const menuLegendTextColorClassName: string = getColorClassNameFor("text", openMenuColor);
 ---
 
 <!-- This div manages the separation of the button from the viewport -->
@@ -32,7 +31,7 @@ const menuLegendColor: string = getColorClassName(openMenuColor);
         md:w-[65px] md:h-[65px]
         lg:w-[80px] lg:h-[80px]"
     >
-        <MenuIcon  id="menuIcon"  color={openMenuColor}/>
+        <MenuIcon  id="menuIcon"  color={openMenuColor }/>
         <CloseIcon id="closeIcon" color={closeMenuColor}/>
     </div>
 </div>
@@ -42,14 +41,14 @@ const menuLegendColor: string = getColorClassName(openMenuColor);
     md:h-[160px] md:px-[50px]
     lg:h-[200px] lg:px-[60px]"
 >
-    <h1
-        class={`relative ${menuLegendColor} select-none font-light
+    <a href="/"
+        class={`relative ${menuLegendTextColorClassName} font-medium font-nunito
            text-[30px]
         md:text-[35px]
         lg:text-[40px]`}
     >
         ANTONIO ACUÑA
-    </h1>
+    </a>
 </div>
 <menu id="menuList"
     class="fixed bg-primary flex flex-col justify-center items-center invisible w-[100%] h-[100vh] z-40"

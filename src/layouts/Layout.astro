@@ -3,8 +3,8 @@ import "../components/GlobalStyles.astro";
 
 import { ColorsEnum } from "../constants/colors";
 
-import Menu   from "../components/Menu.astro"
-import Button from "../components/Button.astro";
+import Menu          from "../components/Menu.astro"
+import ContactButton from "../components/ContactButton.astro";
 
 interface Props
 {
@@ -29,6 +29,6 @@ const { title, openMenuColor, closeMenuColor } = Astro.props;
 	<body>
         <Menu openMenuColor={openMenuColor} closeMenuColor={closeMenuColor}/>
 		<slot />
-        <Button text="Send me a message" color={ColorsEnum.ACCENT}>
+        <ContactButton text="Contact" href="/contact">
 	</body>
 </html>

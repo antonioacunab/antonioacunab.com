@@ -1,14 +1,15 @@
 ---
 import { ColorsEnum } from "../constants/colors";
 
-import Layout from "../layouts/Layout.astro";
+import ArrowRightCircle from "../components/icons/Arrow-Right-Circle.astro";
+import Layout           from "../layouts/Layout.astro";
 ---
 
 <Layout title="Antonio Acuña" openMenuColor={ColorsEnum.SECONDARY} closeMenuColor={ColorsEnum.ACCENT}>
-    <section class="bg-primary relative w-[100%] h-[100vh] px-[50%] flex justify-center items-center">
+    <section class="bg-primary relative w-[100%] h-[100vh] px-[50%] flex justify-center items-center max-w-[100%] overflow-hidden">
         <div id="day-shift-circle" class="relative group w-full h-full flex justify-center items-center has-[:hover]:z-50">
             <h2
-                class="absolute peer font-extrabold text-accent z-30 select-none text-nowrap
+                class="absolute peer font-extrabold text-accent z-30 text-nowrap
                    text-[40px]    mb-[300px]
                 md:text-[50px] md:mb-[400px]
                 lg:text-[60px] lg:mb-[400px]"
@@ -16,16 +17,26 @@ import Layout from "../layouts/Layout.astro";
                 The Day Shift
             </h2>
             <div
-                class="absolute bg-secondary rounded-full mb-[200px] animate-scale transition-all flex flex-col justify-between py-[50px]
-                     hover:mr-0      hover:mb-0      hover:w-[700px]      hover:h-[700px]      hover:z-20
-                peer-hover:mr-0 peer-hover:mb-0 peer-hover:w-[700px] peer-hover:h-[700px] peer-hover:z-20
-                   w-[300px]    h-[300px]    mr-[100px]
-                md:w-[400px] md:h-[400px] md:mr-[150px]
-                lg:w-[400px] lg:h-[400px] lg:mr-[200px]"
+                class="absolute bg-secondary rounded-full animate-scale transition-all flex flex-col justify-between items-center
+                              w-[300px]               h-[300px]            mr-[100px]            mb-[200px]                    py-[50px]
+                           md:w-[400px]            md:h-[400px]         md:mr-[150px]                                       md:py-[100px]
+                           lg:w-[400px]            lg:h-[400px]         lg:mr-[200px]
+                        hover:w-[550px]         hover:h-[550px]      hover:mr-0            hover:mb-0            hover:z-20
+                   peer-hover:w-[550px]    peer-hover:h-[550px] peer-hover:mr-0       peer-hover:mb-0       peer-hover:z-20
+                     hover:lg:w-[700px]      hover:lg:h-[700px]
+                peer-hover:lg:w-[700px] peer-hover:lg:h-[700px]"
             >
-                <span></span>
-                <span></span>
-                <span class="relative text-accent text-center text-4xl font-nunito font-bold invisible group-hover:visible">
+                <div
+                    class="absolute w-[100px] h-[100px] invisible
+                    top-[37%]
+                    md:top-[40%]
+                    group-hover:visible"
+                >
+                    <button onclick="window.location.pathname='/the-day-shift'">
+                        <ArrowRightCircle id="day-shift-arrow" color={ColorsEnum.ACCENT}/>
+                    </button>
+                </div>
+                <span class="absolute top-[70%] text-accent text-center text-4xl font-nunito font-bold invisible group-hover:visible">
                     Get to know my<br/>
                     professional<br/>
                     journey<br/>
@@ -34,7 +45,7 @@ import Layout from "../layouts/Layout.astro";
         </div>
         <div id="night-shift-circle" class="relative group w-full h-full flex justify-center items-center has-[:hover]:z-50">
             <h2
-                class="absolute peer font-extrabold text-secondary z-30 select-none text-nowrap
+                class="absolute peer font-extrabold text-secondary z-30 text-nowrap
                    text-[40px]    mt-[300px]
                 md:text-[50px] md:mt-[400px]
                 lg:text-[60px] lg:mt-[400px]"
@@ -42,30 +53,31 @@ import Layout from "../layouts/Layout.astro";
                 The Night Shift
             </h2>
             <div
-                class="absolute bg-accent rounded-full mt-[200px] animate-inverted-scale transition-all flex flex-col justify-between py-[50px]
-                     hover:ml-0      hover:mt-0      hover:w-[700px]      hover:h-[700px]      hover:z-20
-                peer-hover:ml-0 peer-hover:mt-0 peer-hover:w-[700px] peer-hover:h-[700px] peer-hover:z-20
-                   w-[300px]    h-[300px]    ml-[100px]
-                md:w-[400px] md:h-[400px] md:ml-[150px]
-                lg:w-[400px] lg:h-[400px] lg:ml-[200px]"
+                class="absolute bg-accent rounded-full animate-inverted-scale transition-all flex flex-col justify-between items-center
+                              w-[300px]               h-[300px]               ml-[100px]               mt-[200px]                    py-[50px]
+                           md:w-[400px]            md:h-[400px]            md:ml-[150px]                                          md:py-[100px]
+                           lg:w-[400px]            lg:h-[400px]            lg:ml-[200px]
+                        hover:w-[550px]         hover:h-[550px]         hover:ml-0               hover:mt-0            hover:z-20
+                   peer-hover:w-[550px]    peer-hover:h-[550px]    peer-hover:ml-0          peer-hover:mt-0       peer-hover:z-20
+                     hover:lg:w-[700px]      hover:lg:h-[700px]
+                peer-hover:lg:w-[700px] peer-hover:lg:h-[700px]"
             >
-                <span class="relative text-secondary text-center text-4xl font-nunito font-bold invisible group-hover:visible">
+                <span class="absolute bottom-[70%] text-secondary text-center text-4xl font-nunito font-bold invisible group-hover:visible">
                     Curious<br/>
                     about what do I do<br/>
                     when I'm not at work?<br/>
                 </span>
-                <span></span>
-                <span></span> <!-- Keep empty -->
+                <div
+                    class="absolute w-[100px] h-[100px] invisible
+                    top-[39%]
+                    md:top-[42%]
+                    group-hover:visible"
+                >
+                    <button onclick="window.location.pathname='/the-night-shift'">
+                        <ArrowRightCircle id="day-shift-arrow" color={ColorsEnum.SECONDARY}/>
+                    </button>
+                </div>
             </div>
         </div>
     </section>
 </Layout>
-
-<script>
-    const dayShiftCircle  : HTMLElement = document.getElementById("day-shift-circle")!;
-    const nightShiftCircle: HTMLElement = document.getElementById("night-shift-circle")!;
-
-    dayShiftCircle.onclick = (event: Event) => {
-        dayShiftCircle.classList ;
-    };
-</script>
