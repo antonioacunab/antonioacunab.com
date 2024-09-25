@@ -4,6 +4,12 @@ import { ColorsEnum } from '../constants/colors';
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Antonio Acuña" openMenuColor={ColorsEnum.SECONDARY} closeMenuColor={ColorsEnum.ACCENT}>
-
+<Layout title="Antonio Acuña" openMenuColor={ColorsEnum.SECONDARY} closeMenuColor={ColorsEnum.ACCENT} bodyBackground={ColorsEnum.PRIMARY}>
+    <section id="the-night-shift" class="absolute bg-primary w-[100%] h-[100vh] flex flex-col justify-center items-center">
+        <h2 class="text-accent font-black text-4xl md:text-5xl lg:text-7xl">
+            The Night Shift
+        </h2>
+        <br>
+        <p class="px-[10%] text-secondary text-center text-xl md:text-2xl">Hobbies? Some kind of art? Maybe even a Blog? Come in a few days and find out!</p>
+    </section>
 </Layout>

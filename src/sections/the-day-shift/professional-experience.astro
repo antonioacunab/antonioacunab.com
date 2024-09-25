@@ -1,0 +1,50 @@
+---
+import WorkExperience from "../../components/WorkExperience.astro"
+---
+
+<section
+    id="the-day-shift-professional-experience"
+    class="bg-secondary w-[100%] flex flex-col items-center"
+    style="min-height: calc(var(--vh, 1vh) * 100)"
+>
+    <div
+        class="h-full flex flex-col
+            w-[80%]    justify-start
+         md:w-[80%] md:justify-center
+         lg:w-[80%]
+         xl:w-[40%]"
+    >
+        <h3 class="text-accent text-center font-nunito font-bold text-3xl">
+            PROFESSIONAL EXPERIENCE
+        </h3>
+        <br>
+        <div>
+            <br>
+            <WorkExperience
+                startYear="2022"
+                endYear="2023"
+                roleName="Junior Developer"
+                company="LSV Technology Services S.A.S."
+                description="To enhance the low-code platform, I took on responsibilities for implementing new features such as: a configuration service for managing connections (databases, cache, etc.), an auditing library (error management, context, logging), a library for processing a custom Domain-Specific Language (DSL), Rust-based native modules for hardware input simulation, dynamic UI generation with React, and CI/CD processes using BitBucket Pipelines. As the project scope expanded, the team grew to six developers, an architect, and a Scrum Master, eventually adopting Scrum and evidence-based management. I played a key role by designing and implementing features, creating unit tests, guiding new members through pair programming, conducting code reviews, and preparing usage manuals."
+            />
+
+            <br>
+            <WorkExperience
+                startYear="2021"
+                endYear="2022"
+                roleName="Instructor"
+                company="LSV Technology Services S.A.S."
+                description="I trained over 40 developers across two editions of the company's CAR program (a talent development initiative) in technologies such as Node.js, TypeScript, and Jest, as well as development principles like SOLID, Object-Oriented Programming, and TDD."
+            />
+
+            <br>
+            <WorkExperience
+                startYear="2021"
+                endYear="2022"
+                roleName="Trainee Developer"
+                company="LSV Technology Services S.A.S."
+                description="The company specializes in digital transformation and the development of integrated business solutions. To streamline software development and improve product quality, the company launched a project to create a low-code platform. This platform enables developers to build applications by orchestrating reusable software components. My team, consisting of two developers and an architect, was fully responsible for the entire project. We worked using extreme programming methodologies, and my responsibilities included contributing to the platform’s core engine, creating comprehensive unit tests, and integrating external services to support the system."
+            />
+        </div>
+    </div>
+</section>

@@ -2,17 +2,18 @@
 import { ColorsEnum           } from "../constants/colors";
 import { getColorClassNameFor } from "../utils/getColorClassNameFor";
 
-import MenuIcon   from "./icons/Bars-3.astro";
-import CloseIcon  from "./icons/X-Mark.astro";
-import MenuItem   from "./MenuItem.astro";
+import MenuIcon  from "./react/icons/Bars3";
+import CloseIcon from "./react/icons/XMark";
+import MenuItem  from "./MenuItem.astro";
 
 interface Props
 {
     openMenuColor : ColorsEnum;
     closeMenuColor: ColorsEnum;
+    sectionTitle ?: string;
 }
 
-const { openMenuColor, closeMenuColor } = Astro.props;
+const { openMenuColor, closeMenuColor, sectionTitle } = Astro.props;
 
 const menuLegendTextColorClassName: string = getColorClassNameFor("text", openMenuColor);
 ---
@@ -49,10 +50,15 @@ const menuLegendTextColorClassName: string = getColorClassNameFor("text", openMe
     >
         ANTONIO ACUÑA
     </a>
+    <span
+        class={`absolute text-accent font-black
+                text-[20px] right-[35px] top-[70px]
+                md:text-[25px] md:right-[50px] md:top-[90px]
+                lg:text-[30px] lg:right-[60px] lg:top-[110px]`}>
+        { sectionTitle }
+    </span>
 </div>
-<menu id="menuList"
-    class="fixed bg-primary flex flex-col justify-center items-center invisible w-[100%] h-[100vh] z-40"
->
+<menu id="menuList" class="fixed bg-primary flex flex-col justify-center items-center invisible w-[100%] z-40" style="height: calc(var(--vh, 1vh) * 100)">
     <MenuItem href="/"                title="Home"/>
     <MenuItem href="/about-me"        title="About Me"/>
     <MenuItem href="/the-day-shift"   title="The Day Shift"/>

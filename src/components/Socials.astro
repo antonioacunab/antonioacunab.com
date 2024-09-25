@@ -1,0 +1,24 @@
+---
+import GitHubLogo   from "../components/react/icons/GitHubLogo";
+import LinkedInLogo from "../components/react/icons/LinkedInLogo";
+import XLogo        from "../components/react/icons/XLogo";
+
+import { ColorsEnum } from "../constants/colors";
+---
+
+<div class="flex flex-col justify-center items-center">
+    <span class="text-primary font-nunito font-semibold text-3xl">
+        Join my network
+    </span>
+    <div class="w-[180px] pt-2 flex flex-row justify-between items-center">
+        <div class="h-[50px] w-[50px] hover:scale-125 transition-all">
+            <LinkedInLogo id="linkedin-profile" color={ColorsEnum.PRIMARY} onClick={() => {}}/>
+        </div>
+        <div class="h-[50px] w-[50px] hover:scale-125 transition-all">
+            <GitHubLogo id="github-profile" color={ColorsEnum.PRIMARY} onClick={() => {}}/>
+        </div>
+        <div class="h-[50px] w-[50px] hover:scale-125 transition-all">
+            <XLogo id="x-profile" color={ColorsEnum.PRIMARY} onClick={() => {}}/>
+        </div>
+    </div>
+</div>

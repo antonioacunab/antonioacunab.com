@@ -1,11 +1,16 @@
 ---
+import Socials from "../components/Socials.astro"
+
 import { ColorsEnum } from "../constants/colors"
 
 import Layout from "../layouts/Layout.astro"
 ---
 
-<Layout title="Contact" openMenuColor={ColorsEnum.SECONDARY} closeMenuColor={ColorsEnum.ACCENT}>
-    <section class="bg-primary relative w-[100%] h-[100vh] flex justify-center items-center">
-
+<Layout title="Contact" openMenuColor={ColorsEnum.PRIMARY} closeMenuColor={ColorsEnum.ACCENT} bodyBackground={ColorsEnum.SECONDARY}>
+    <section
+        class="bg-secondary relative w-[100%] h-[100vh] flex justify-center items-center"
+        style="height: calc(var(--vh, 1vh) * 100)"
+    >
+        <Socials/>
     </section>
 </Layout>

@@ -1,9 +1,17 @@
 ---
-import { ColorsEnum } from '../constants/colors';
+import { ColorsEnum } from "../constants/colors";
 
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+
+import AboutMe                from "../sections/the-day-shift/about-me.astro";
+import ProfessionalExperience from "../sections/the-day-shift/professional-experience.astro";
+import Skills                 from "../sections/the-day-shift/skills.astro";
 ---
 
-<Layout title="Antonio Acuña" openMenuColor={ColorsEnum.SECONDARY} closeMenuColor={ColorsEnum.ACCENT}>
-
+<Layout title="Antonio Acuña" openMenuColor={ColorsEnum.PRIMARY} closeMenuColor={ColorsEnum.ACCENT} sectionTitle={"The Day Shift"} bodyBackground={ColorsEnum.SECONDARY}>
+    <div class="fixed w-full h-[15vh] bg-secondary top-0 z-10"/>
+    <AboutMe/>
+    <ProfessionalExperience/>
+    <Skills/>
+    <div class="fixed w-full h-[15vh] bg-secondary bottom-0 z-10"/>
 </Layout>

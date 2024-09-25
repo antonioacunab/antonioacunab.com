@@ -1,0 +1,79 @@
+<section
+    id="the-day-shift-skills"
+    class="bg-secondary w-[100%] flex flex-col items-center justify-center py-[15vh]"
+    style="min-height: calc(var(--vh, 1vh) * 100)"
+>
+    <div
+        class="h-full skills-grid items-start
+            w-[80%]    justify-start
+         md:w-[80%] md:justify-center
+         lg:w-[80%]
+         xl:w-[60%]"
+    >
+        <div class="grid justify-center" style="grid-area: technologies">
+            <div class="flex flex-col justify-center">
+                <h3 class="text-accent text-center text-3xl font-nunito font-bold">
+                    TECHNOLOGIES
+                </h3>
+                <br>
+                <p class="text-primary w-full font-nunito font-semibold text-xl text-center">Node.js, TypeScript, JavaScript, Jest, React, HTML, CSS, Astro, Tailwind CSS, Git, Docker, PostgreSQL, MySQL, MongoDB, Postman, Azure, AWS, JIRA, APIs.</p>
+            </div>
+        </div>
+        <div class="grid justify-center" style="grid-area: soft-skills">
+            <div class="flex flex-col justify-center">
+                <h3 class="text-accent text-center text-3xl font-nunito font-bold">
+                    SOFT SKILLS
+                </h3>
+                <br>
+                <p class="text-primary w-full font-nunito font-semibold text-xl text-center">Leadership, Assertive Communication, Active Listening, Teamwork, Adaptability, Problem Solving, Flexibility, Think Outside the Box.</p>
+            </div>
+        </div>
+        <div class="grid justify-center" style="grid-area: methodologies">
+            <div class="flex flex-col justify-center">
+                <h3 class="text-accent text-center text-3xl font-nunito font-bold">
+                    METHODOLOGIES
+                </h3>
+                <br>
+                <p class="text-primary w-full font-nunito font-semibold text-xl text-center">Test-Driven Development (TDD), Domain-Driven Development (DDD), SOLID principle, Hexagonal Architecture, Microservices, 12 Factor, Laws of UX</p>
+            </div>
+        </div>
+        <div class="grid" style="grid-area: languages">
+            <div class="flex flex-col justify-center">
+                <h3 class="text-accent text-center text-3xl font-nunito font-bold">
+                    LANGUAGES
+                </h3>
+                <br>
+                <p class="text-primary w-full font-nunito font-semibold text-xl text-center">English, Spanish</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .skills-grid
+    {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-areas:
+            "technologies"
+            "soft-skills"
+            "methodologies"
+            "languages";
+        gap: 30px;
+    }
+
+    @media (min-width: 1024px)
+    {
+        .skills-grid
+        {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            grid-template-areas:
+                "technologies soft-skills"
+                "methodologies languages";
+            gap: 60px;
+        }
+    }
+</style>
